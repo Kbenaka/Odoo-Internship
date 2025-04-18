@@ -20,20 +20,27 @@
 ##############################################################################
 
 {
-'name': 'Samplemodule',
-'version': '18.0.0.0',
-'summary': 'This Module is for training purposes.',
-'description': """This Module is for training purposes.
-""",
-'category':'',
-'author': 'Benaka k',
-'website': 'www.madremia.com',
-"license": "LGPL-3",
-'depends': ['base'],
-'data': ['security/ir.model.access.csv','security/security.xml','views/car_rental_view.xml','views/model_one_view.xml','views/menu.xml'],
-'test': [],
-'demo': [],
-'installable': True,
-'auto_install': False,
-'application': False,
+    'name': 'clothe_industry',
+    'version': '18.0.0.0',
+    'summary': 'Manage clothing products and materials',
+    'description': """
+        This module helps manage clothing products and their materials
+        in the fashion industry.
+    """,
+    'author': 'Benaka k',
+    'website': 'www.madremia.com',
+    'category': 'Manufacturing',
+    'depends': ['base'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/clothing_views.xml',
+        'views/material_views.xml',
+    ],
+    'test': [],
+    'demo': [],
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3',
 }
+
+

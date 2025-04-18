@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_clothing_product_tree" model="ir.ui.view">
+        <field name="name">clothing.product.tree</field>
+        <field name="model">clothing.product</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="size"/>
+                <field name="price"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_clothing_product_form" model="ir.ui.view">
+        <field name="name">clothing.product.form</field>
+        <field name="model">clothing.product</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="size"/>
+                            <field name="price"/>
+                        </group>
+                        <group>
+                            <field name="image" widget="image" class="oe_avatar"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                        <page string="Materials">
+                            <field name="material_ids" widget="many2many_tags"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="menu_clothing_main" name="Clothing Industry"/>
+    <menuitem id="menu_clothing_products" name="Products" parent="menu_clothing_main"/>
+    
+    <record id="action_clothing_product" model="ir.actions.act_window">
+        <field name="name">Clothing Products</field>
+        <field name="res_model">clothing.product</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem 
+        id="menu_clothing_product_action" 
+        name="Clothing Products" 
+        parent="menu_clothing_products" 
+        action="action_clothing_product"
+    />
+</odoo>
